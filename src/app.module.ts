@@ -5,6 +5,7 @@ import { UserModule } from './user/user.module';
 import { PharmacyModule } from './pharmacy/pharmacy.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule } from '@nestjs/config';
+import { FavoritesModule } from './favorites/favorites.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -12,7 +13,7 @@ import { ConfigModule } from '@nestjs/config';
       isGlobal: true,
     }),
     MongooseModule.forRoot(process.env.MONGO_URI),
-    UserModule, PharmacyModule
+    UserModule, PharmacyModule, FavoritesModule
   ],
   controllers: [AppController],
   providers: [AppService],
