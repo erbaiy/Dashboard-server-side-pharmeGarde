@@ -21,6 +21,6 @@ import { FavoritesModule } from './favorites/favorites.module';
     
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService]
 })
 export class AppModule {}

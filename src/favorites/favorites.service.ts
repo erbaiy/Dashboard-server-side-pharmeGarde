@@ -23,4 +23,8 @@ export class FavoritesService {
   async removeFavorite(userId: string, pharmacyId: string): Promise<void> {
     await this.favoriteModel.deleteOne({ userId, pharmacyId }).exec();
   }
+
+  async getAll(): Promise<Favorite[]>{
+    return this.favoriteModel.find({});
+  }
 }

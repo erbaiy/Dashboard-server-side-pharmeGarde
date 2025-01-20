@@ -23,4 +23,9 @@ export class FavoritesController {
   ) {
     return this.favoritesService.removeFavorite(userId, pharmacyId);
   }
+
+  @Get()
+  getAll(){
+    return this.favoritesService.getAll();
+  }
 }
