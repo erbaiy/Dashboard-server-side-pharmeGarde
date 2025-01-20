@@ -7,7 +7,7 @@ export type PharmacyDocument = Pharmacy & Document;
 
 @Schema({ timestamps: true })
 export class Pharmacy {
-  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true })
+  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'User', required: false })
   administrator: User;
 
   @Prop({ required: true, maxlength: 30 })

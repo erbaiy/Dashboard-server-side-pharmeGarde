@@ -5,6 +5,7 @@ export class CreatePharmacyDto {
 
     @IsDefined({ message: "Administrator is required." })
     @IsMongoId({ message: "Administrator must be a valid MongoDB ObjectId." })
+    @IsOptional()
     administrator: Types.ObjectId;
 
     @IsDefined({ message: "The name of the pharmacy must be defined." })
