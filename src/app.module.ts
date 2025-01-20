@@ -9,11 +9,16 @@ import { FavoritesModule } from './favorites/favorites.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
-      envFilePath: '.env',
+      envFilePath: '.env.development.local',
       isGlobal: true,
     }),
-    MongooseModule.forRoot(process.env.MONGO_URI),
+    MongooseModule.forRootAsync({
+      useFactory: () => ({
+        uri: process.env.MONGO_URI,
+      })
+    }),
     UserModule, PharmacyModule, FavoritesModule
+    
   ],
   controllers: [AppController],
   providers: [AppService],

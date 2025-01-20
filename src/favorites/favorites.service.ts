@@ -8,7 +8,7 @@ import { CreateFavoriteDto } from './dto/create-favorite.dto';
 @Injectable()
 export class FavoritesService {
   constructor(
-    @InjectModel(Favorite.name) private favoriteModel: Model<Favorite>,
+    @InjectModel(Favorite.name) private readonly favoriteModel: Model<Favorite>,
   ) {}
 
   async addFavorite(createFavoriteDto: CreateFavoriteDto): Promise<Favorite> {
