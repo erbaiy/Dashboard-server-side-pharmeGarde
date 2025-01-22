@@ -6,6 +6,11 @@ import { PharmacyModule } from './pharmacy/pharmacy.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule } from '@nestjs/config';
 import { FavoritesModule } from './favorites/favorites.module';
+import { CommentsService } from './comments/comments.service';
+import { CommentsController } from './comments/comments.controller';
+import { CommentsModule } from './comments/comments.module';
+import { FavoritesController } from './favorites/favorites.controller';
+import { FavoritesService } from './favorites/favorites.service';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -17,7 +22,7 @@ import { FavoritesModule } from './favorites/favorites.module';
         uri: process.env.MONGO_URI,
       })
     }),
-    UserModule, PharmacyModule, FavoritesModule
+    UserModule, PharmacyModule, FavoritesModule, CommentsModule
     
   ],
   controllers: [AppController],
