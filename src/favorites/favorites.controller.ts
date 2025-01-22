@@ -1,4 +1,4 @@
-import { Controller, Post, Get, Delete, Body, Param } from '@nestjs/common';
+import { Controller, Post, Get, Delete, Body, Param, Put } from '@nestjs/common';
 import { FavoritesService } from './favorites.service';
 import { CreateFavoriteDto } from './dto/create-favorite.dto';
 
@@ -16,12 +16,12 @@ export class FavoritesController {
     return this.favoritesService.getUserFavorites(userId);
   }
 
-  @Delete(':userId/:pharmacyId')
+  @Put('/:favoriteId')
   removeFavorite(
-    @Param('userId') userId: string,
-    @Param('pharmacyId') pharmacyId: string,
+    @Param('favoriteId') favoriteId: string,
+    @Body('pharmacyId') pharmacyId: string,
   ) {
-    return this.favoritesService.removeFavorite(userId, pharmacyId);
+    return this.favoritesService.removeFavorite(favoriteId, pharmacyId);
   }
 
   @Get()
