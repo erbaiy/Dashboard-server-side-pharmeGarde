@@ -3,8 +3,6 @@ import { PharmacyController } from './pharmacy.controller';
 import { PharmacyService } from './pharmacy.service';
 import { CreatePharmacyDto } from './Dtos/create-pharmacy.dto';
 import { UpdatePharmacyDto } from './Dtos/update-pharmacy.dto';
-import { HttpStatus } from '@nestjs/common';
-import { ObjectId } from 'mongodb';
 import { Types } from 'mongoose';
 
 describe('PharmacyController', () => {

@@ -6,7 +6,7 @@ import { CreatePharmacyDto } from './Dtos/create-pharmacy.dto';
 import { UpdatePharmacyDto } from './Dtos/update-pharmacy.dto';
 
 @Injectable()
-export class PharmacyService {
+export  class PharmacyService {
   constructor(
     @InjectModel(Pharmacy.name) private readonly pharmacyModel: Model<PharmacyDocument>,
   ) { }
