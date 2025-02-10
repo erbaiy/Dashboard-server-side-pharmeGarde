@@ -14,7 +14,7 @@ export  class PharmacyService {
   async create(createPharmacyDto: CreatePharmacyDto): Promise<Pharmacy | string> {
     try {
       const existingPharmacy = await this.pharmacyModel
-        .findOne({ name: createPharmacyDto.name, address: createPharmacyDto.address })
+        .findOne({ name: createPharmacyDto.name, address: createPharmacyDto.address,longitude: createPharmacyDto.longitude,latitude: createPharmacyDto.latitude })
         .exec();
 
       if (existingPharmacy) {
@@ -24,8 +24,8 @@ export  class PharmacyService {
       return await newPharmacy.save();
     } catch (e) {
       console.log('opssss', e);
-      return 'ops smth went wrong '
-    }
+       throw new Error(e);  
+      }
   }
 
   async findAll(): Promise<Pharmacy[] | string> {

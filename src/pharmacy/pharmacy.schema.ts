@@ -33,6 +33,12 @@ export class Pharmacy {
 
   @Prop({ required: false })
   imageUrl?: string;
+
+  @Prop({ required: true })
+  longitude: number;
+
+  @Prop({ required: true })
+  latitude: number;
 }
 
 export const PharmacySchema = SchemaFactory.createForClass(Pharmacy);

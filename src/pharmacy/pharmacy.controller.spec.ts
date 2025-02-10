@@ -59,7 +59,10 @@ describe('PharmacyController', () => {
     weekendshift: false,
     openingHoursNight: '22:00-06:00',
     dutyDate: new Date(),
-    imageUrl: 'http://example.com/image.jpg'
+    imageUrl: 'http://example.com/image.jpg',
+    longitude: 123.456,
+    latitude: 78.90
+    
   };
 
   const mockUpdateDto: UpdatePharmacyDto = {

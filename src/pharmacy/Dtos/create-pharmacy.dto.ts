@@ -34,4 +34,11 @@ export class CreatePharmacyDto {
   @IsOptional()
   @IsString({ message: "Image URL must be a string." })
   imageUrl?: string;
+
+   
+  @IsString({ message: "Longitude must be a string." })
+  longitude: number;
+
+  @IsString({ message: "Latitude must be a string." })
+  latitude: number;
 }
